@@ -26,10 +26,13 @@ public class DataNormalize {
             LocalDate countdownDateLocal = LocalDate.of(Year.now().getValue(), 1, 1);
 
             // Extract year from a LocalDate
-            int yearOfJoinDate = joinDateLocal.getYear();
-            int yearOfCountdown = countdownDateLocal.getDayOfYear();
+            int yearOfJoinDate = joinDateLocal.getMonthValue();
+            int yearOfCountdown = countdownDateLocal.getMonthValue() + 12 * (countdownDateLocal.getYear() - joinDateLocal.getYear());
+            int different = yearOfCountdown - yearOfJoinDate;
+            if(different > 12) different = 12;
+            if(different < 0) throw new Exception();
 
-            return (double) yearOfCountdown - yearOfJoinDate;
+            return (double) (different - 1) / (12 - 1);
         }
         catch (Exception e)
         {
@@ -112,7 +115,7 @@ public class DataNormalize {
         {
             return 0;
         }
-        double value = PresentAsDouble(burnRate) / 10;
+        double value = PresentAsDouble(burnRate);
         if(value < 0 || value > 1)
         {
             throw new IncorrectDataFormat("Burn rate not in range 0-10. Check the dataset.");

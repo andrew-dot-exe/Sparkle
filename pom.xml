@@ -6,33 +6,89 @@
 
     <groupId>com.ai</groupId>
     <artifactId>sparkle</artifactId>
-    <version>neural-network</version>
+    <version>1.0.0</version>
     <packaging>jar</packaging>
+
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>23</maven.compiler.source>
-        <maven.compiler.target>23</maven.compiler.target>
-        <start-class>com.ai.Main</start-class>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
     </properties>
 
     <build>
-        <defaultGoal>install</defaultGoal>
+        <resources>
+            <!-- Основные ресурсы из src/main/resources -->
+            <resource>
+                <directory>src/main/java</directory>
+            </resource>
+
+            <!-- Добавление папки weight -->
+            <resource>
+                <directory>weight</directory>
+                <includes>
+                    <include>**/*</include> <!-- Включить все файлы из папки weight -->
+                </includes>
+            </resource>
+        </resources>
+
         <plugins>
-            <!-- Maven JAR Plugin -->
+            <!-- Maven Compiler Plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jar-plugin</artifactId>
-                <version>3.0.2</version>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
                 <configuration>
-                    <archive>
-                        <manifest>
-                            <addClasspath>true</addClasspath>
+                    <source>${maven.compiler.source}</source>
+                    <target>${maven.compiler.target}</target>
+                </configuration>
+            </plugin>
+
+            <!-- Maven Shade Plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>3.4.0</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <createDependencyReducedPom>true</createDependencyReducedPom>
+
+                    <!-- Указываем главный класс для манифеста -->
+                    <transformers>
+                        <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
                             <mainClass>com.ai.Sparkle</mainClass>
-                        </manifest>
-                    </archive>
+                        </transformer>
+                    </transformers>
+
+                    <!-- Указываем, какие файлы включать в итоговый JAR -->
+                    <filters>
+                        <filter>
+                            <artifact>*:*</artifact>
+                            <includes>
+                                <include>weight/**/*</include> <!-- Все файлы из папки weight -->
+                            </includes>
+                        </filter>
+                    </filters>
                 </configuration>
             </plugin>
         </plugins>
     </build>
+
+    <repositories>
+        <repository>
+            <id>maven-central</id>
+            <url>https://repo.maven.apache.org/maven2</url>
+        </repository>
+    </repositories>
+
+    <dependencies>
+        <!-- Ваши зависимости -->
+    </dependencies>
 
 </project>

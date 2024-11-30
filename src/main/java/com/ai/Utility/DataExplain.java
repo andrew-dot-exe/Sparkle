@@ -12,7 +12,7 @@ public class DataExplain {
             return "Мужчины меньше расположены к выгоранию";
         }
         else if(normalizedInput == 0)
-            return "Работает над продукцией, меньше расположен к выгоранию.";
+            return "Женщины больше расположены к выгоранию";
         throw new RuntimeException("Gender not normalized");
     }
     public static String explainCompanyType(double normalizedInput)
@@ -36,15 +36,15 @@ public class DataExplain {
     }
     public static String explainworkLoad(double normalizedInput)
     {
-        if(normalizedInput <= 2.5)
+        if(normalizedInput <= 0.35)
         {
             return "Низкая нагруженность на работе.";
         }
-        else if(normalizedInput <= 4.0)
+        else if(normalizedInput <= 0.65)
         {
             return "Средняя нагруженность на работе.";
         }
-        else if (normalizedInput <= 5.0)
+        else if (normalizedInput <= 1)
         {
             return "Высокая нагруженность на работе.";
         }
@@ -52,31 +52,31 @@ public class DataExplain {
     }
     public static String explainworkTime(double normalizedInput)
     {
-        if(normalizedInput <= 2.5)
+        if(normalizedInput <= 0.45)
         {
-            return "Работник чаще всего уходит в срок, переработки редки";
+            return "Короткий рабочий день";
         }
-        else if(normalizedInput <= 4.0)
+        else if(normalizedInput <= 0.7)
         {
-            return "Работник может задержаться на работе";
+            return "Средний рабочий день";
         }
-        else if (normalizedInput <= 5.0)
+        else if (normalizedInput <= 1.0)
         {
-            return "Работник часто перерабатывает";
+            return "Длинный рабочий день";
         }
         throw new RuntimeException("Worktime not normalized");
     }
     public static String explainFatigueScore(double normalizedInput)
     {
-        if(normalizedInput <= 3.0)
+        if(normalizedInput <= 0.3)
         {
             return "Сотрудник чувствует себя хорошо, усталости нет.";
         }
-        else if(normalizedInput <= 6.0)
+        else if(normalizedInput <= 0.6)
         {
             return "У работника присутствует небольшая усталость.";
         }
-        else if(normalizedInput <= 9.0)
+        else if(normalizedInput <= 1.0)
         {
             return "Работнику в скором времени понадобится отдых";
         }
@@ -87,11 +87,11 @@ public class DataExplain {
     }
     public static String explainBurnRate(double normalizedInput)
     {
-        if(normalizedInput <= 5.0)
+        if(normalizedInput <= 0.4)
         {
             return "Выгорание маловероятно.";
         }
-        else if(normalizedInput <= 8.0)
+        else if(normalizedInput <= 0.8)
         {
             return "Работник близок к выгоранию, просьба обратить внимание.";
         }
