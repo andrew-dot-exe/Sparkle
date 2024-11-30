@@ -1,8 +1,8 @@
 package com.ai.dataSet;
 
 public class Data {
-    private String joinDate; // todo: represent date as Date object and count days before today
-    private String gender;
+    private String joinDate; // not explainable
+    private String gender; // explainable
     private String companyType; // only service or product
     private String worksFromHome;
     //    private final double workload;
@@ -26,6 +26,18 @@ public class Data {
         this.workTime = workTime;
         this.fatigueScore = fatigueScore;
         this.burnRate = burnRate;
+    }
+
+    public Data(String joinDate, String gender, String companyType, String worksFromHome, String workload,
+                String workTime, String fatigueScore) {
+        this.joinDate = joinDate;
+        this.gender = gender;
+        this.companyType = companyType;
+        this.worksFromHome = worksFromHome;
+        this.workload = workload;
+        this.workTime = workTime;
+        this.fatigueScore = fatigueScore;
+        this.burnRate = null;
     }
 
     private void weightData()

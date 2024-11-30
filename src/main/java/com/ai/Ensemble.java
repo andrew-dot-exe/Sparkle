@@ -33,7 +33,7 @@ public class Ensemble {
         }
         catch (Exception exc)
         {
-            throw new RuntimeException("Data error, check data");
+            throw exc;//new RuntimeException("Data error, check data");
         }
     }
 }

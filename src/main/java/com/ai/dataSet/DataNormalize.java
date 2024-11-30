@@ -108,6 +108,10 @@ public class DataNormalize {
 
     public static double normalizeBurnRate(String burnRate) throws IncorrectDataFormat
     {
+        if(burnRate == null)
+        {
+            return 0;
+        }
         double value = PresentAsDouble(burnRate) / 10;
         if(value < 0 || value > 1)
         {
