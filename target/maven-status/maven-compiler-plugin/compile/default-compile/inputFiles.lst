@@ -1,0 +1,15 @@
+/Users/andrew/IdeaProjects/NeuralNetwork/Sparkle/src/main/java/com/ai/Ensemble.java
+/Users/andrew/IdeaProjects/NeuralNetwork/Sparkle/src/main/java/com/ai/Main.java
+/Users/andrew/IdeaProjects/NeuralNetwork/Sparkle/src/main/java/com/ai/Metrics/Graf.java
+/Users/andrew/IdeaProjects/NeuralNetwork/Sparkle/src/main/java/com/ai/Metrics/GrafMetrics.java
+/Users/andrew/IdeaProjects/NeuralNetwork/Sparkle/src/main/java/com/ai/Training.java
+/Users/andrew/IdeaProjects/NeuralNetwork/Sparkle/src/main/java/com/ai/dataSet/CSVReader.java
+/Users/andrew/IdeaProjects/NeuralNetwork/Sparkle/src/main/java/com/ai/dataSet/Data.java
+/Users/andrew/IdeaProjects/NeuralNetwork/Sparkle/src/main/java/com/ai/dataSet/DataSet.java
+/Users/andrew/IdeaProjects/NeuralNetwork/Sparkle/src/main/java/com/ai/dataSet/NormalizeData.java
+/Users/andrew/IdeaProjects/NeuralNetwork/Sparkle/src/main/java/com/ai/neuralNetwork/Layer.java
+/Users/andrew/IdeaProjects/NeuralNetwork/Sparkle/src/main/java/com/ai/neuralNetwork/NeuralNetwork.java
+/Users/andrew/IdeaProjects/NeuralNetwork/Sparkle/src/main/java/com/ai/neuralNetwork/Neuron.java
+/Users/andrew/IdeaProjects/NeuralNetwork/Sparkle/src/main/java/com/ai/neuralNetwork/train/LayerTrain.java
+/Users/andrew/IdeaProjects/NeuralNetwork/Sparkle/src/main/java/com/ai/neuralNetwork/train/NeuronTrain.java
+/Users/andrew/IdeaProjects/NeuralNetwork/Sparkle/src/main/java/com/ai/neuralNetwork/train/TrainingNeuralNetwork.java
