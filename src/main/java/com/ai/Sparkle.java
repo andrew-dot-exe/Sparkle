@@ -14,7 +14,7 @@ public class Sparkle {
     private final String workdir;
     private final Ensemble ensemble;
 
-    Sparkle()
+    public Sparkle()
     {
         workdir = System.getProperty("user.dir");
         ensemble = new Ensemble(workdir + "/weight/");
@@ -28,7 +28,7 @@ public class Sparkle {
         System.out.println(sp.getBurnRate(testData));
     }
 
-    public void displayTestDatasetResult()
+    private void displayTestDatasetResult()
     {
         try(BufferedReader br = new BufferedReader(new FileReader(workdir  + "/test.csv"))) {
             Ensemble ensemble = new Ensemble(workdir + "/weight/");
@@ -40,7 +40,7 @@ public class Sparkle {
             System.out.println(e);
         }
     }
-    public void train()
+    private void train()
     { //метод для тренировки нейросети
         String csv_dataset = workdir + "/train.csv";
         DataSet dataSet = new DataSet(csv_dataset);
